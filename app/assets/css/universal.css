@@ -1,0 +1,430 @@
+/*logo font-family*/
+.logo {
+	font-family: 'Exo', sans-serif;	
+}
+/*when focused no outline*/
+body :focus {
+	outline: none;
+}
+body {
+	height: auto;
+}
+/*basic body look*/
+.body {
+	font-family: 'Roboto', sans-serif;
+	color: black;
+}
+/*Underline*/
+.underline {
+	text-decoration: underline;
+}
+/*narrow containers*/
+.container_narrow {
+	width: 60%;
+}
+/*sidenav*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 4em;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 1s;
+    padding-top: 60px;
+}
+/*list-items in sidenav*/
+.sidenav a, .sidenav li {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+
+}
+/*hover-effects for text in sidenav*/
+.sidenav a:hover, .sidenav li:hover{
+    color: #f1f1f1;
+}
+/*to center the sidenav*/
+.sidenav ul {
+	padding-left: 0;
+}
+/*dropdown hover-effect*/
+.sidenav ul>li:hover{
+	background-color: #818181
+}
+/*closebutton sidenav*/
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+/*position for dropdown sidenav*/
+.sidenav .dropdown:hover .dropdown-content {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+/*sidenav screenstats*/
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*full nav*/
+nav{
+	position: fixed;
+	width: 100%;
+	height:55px;
+	line-height:55px;
+	background-color: rgba(255,255,255,0.7);
+	color: black;
+	border-bottom:1px solid #d8d8d8;
+	z-index: 10000;
+	font-family: 'Exo', sans-serif;	
+}
+/*leftnav*/
+nav .left-nav{
+	float:left;
+	margin-left: 8%;
+	vertical-align: top;
+	list-style: none;
+	font-size: 2em;
+}
+/*rightnav*/
+nav .right-nav{
+	float: right;
+	margin-right: 8%;
+	vertical-align: top;
+}
+/*rightnav hover-effects*/
+nav .right-nav li:hover {
+	background-color: #f1f1f1;
+	height: 55px;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content li {
+    color: black;
+    padding-left: 10px;
+    text-decoration: none;
+    display: block;
+}
+.active {
+	background-color: #f1f1f1	
+}
+/* Change color of dropdown links on hover */
+.dropdown-content li:hover {
+	background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+nav .dropdown:hover .dropdown-content {
+    display: block;
+    top: 3.7em;
+    border-top-right-radius:0;
+	border-top-left-radius:0;
+	left: -1px;
+}
+.nav_icon {
+	position: relative;
+	bottom: 0.5em;
+	font-size: 2em;
+}
+/*frontpage jumbos*/
+.jumbotron {
+	margin-top: 0;
+	font-size: 7em;
+	color: black;
+	height: 110vh;
+	font-family: 'Exo', sans-serif;
+}
+/*small jumbo*/
+.jumbotron_small {
+	height: 50vh;
+	margin-bottom: 0;
+}
+/*tiny jumbo*/
+.jumbotron_xs {
+	height: 30vh;
+}
+/*text-specs big jumbo*/
+h1.jumbotron {
+	display:flex;
+    align-items: center;
+    justify-content: center;
+}
+/*arrow look*/
+i.jumbo {
+	position: absolute;
+	display: none;
+	bottom: 2em;
+	transform: translateX(-50%);
+	font-size: 5em;
+	color: #f1f1f1;
+}
+/*.hover {
+	transition: all 1.5s ease-out;
+	-webkit-filter: brightness(1);
+ 	-ms-transform: scale(1);
+  	transform: scale(1);
+}
+/*arrow when jumbo hovered*/
+/*.hover:hover {
+	transition: all 1.5s ease-in;
+	-webkit-filter: brightness(1.1);
+ 	-ms-transform: scale(1.15);
+  	transform: scale(1.15);
+}*/
+.hover:hover i.jumbo {
+	display: inline-block;
+}
+/*h3 jumbo*/
+h3.jumbotron {
+	display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.frontpage_img {
+	height: 12em;
+	width: 12em;
+	border-radius: 50%;
+	background-image: url(http://www.johndoe.pro/img/John_Doe.jpg);
+	background-size: cover;
+	position: relative;
+	left: 8.5em;
+}
+.cover {
+	margin: 0 auto;
+}
+.footer {
+	height: 20em;
+	background-color: #ddd;
+}
+.footer h3 {
+	margin-top: 3em;
+}
+/*big top-margin*/
+.add_player {
+	margin-top: 5em;
+}
+.margin0 {
+	margin: 0;
+}
+/*hover background color*/
+.hover_effect:hover {
+	background-color: rgba(158,158,158,0.2);
+}
+.first_front h2 {
+	margin-top: 5em;
+	margin-bottom: 1,5em;
+}
+.huge_numbers h2 {
+	font-size: 7em;
+}
+/*size of icons for frontpages*/
+.fa_size {
+	margin-top: 0.5em;
+	font-size: 8em;
+}
+.frontpage_why {
+	padding-bottom: 5em;
+	margin-bottom: 3em;
+	border-bottom: 1px solid #ddd;
+}
+.font_weight {
+	font-weight: 600;
+}
+.border_weak{
+  border: 1px solid #ddd;
+}
+.selector_journal {
+  margin: 1em 0;
+}
+.center {
+	text-align: center;
+}
+.right {
+	float: right;
+	margin-right: 0;
+}
+h3.frontpage {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+.header_btn {
+	margin-left: 5px;
+	position: absolute;
+	top: 23em;
+	right: 0.7em;
+	z-index: 100;
+}
+.edit_btn {
+	top: 30em; 
+}
+.frontpage_btn {
+	font-size: 10px;
+	z-index: 100;
+}
+.frontpage_btn_player {
+	margin-right: 1.9em;
+}
+.schedule_right_margin {
+	margin-right: 1.7em;
+}
+.left_margin {
+	margin-left: 10px;
+}
+.left_margin2 {
+	margin-left: 2em;
+}
+.width_95{
+	width: 95%;
+}
+.width_100{
+	width: 100%;
+}
+.right_margin {
+	margin-right: 10px;
+}
+.right_margin2 {
+	margin-right: 2em;
+}
+tr.frontpage th {
+	text-align: center;
+}
+.coach_first {
+	margin-top: 5em;
+}
+.padding_top {
+	padding-top: 3em;
+}
+.table-front {
+	border: 1px solid #ddd;
+}
+.title_front {
+	border-bottom: none;
+}
+.margins_auto {
+	margin: 0 auto;
+}
+.fixed_hight {
+	margin-top: 0.5em;
+}
+.background_size_cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.transparent {
+	background-color: transparent;
+}
+.color_f1 {
+	color: #f1f1f1;
+}
+.min_width_min_height {
+	min-width: 100%;
+	min-height: 100vh;
+}
+.ngtoast_profile, .ng-toast.ng-toast--top, .ng-toast.ng-toast--top .ng-toast__list {
+  bottom: 0!important;
+  top: auto!important;
+  /*left: auto;
+  margin: 0;*/
+}
+.background_bottom {
+	background-position: bottom;
+}
+.background_front {
+	background-image: url(https://www.pogophysio.com.au/wp-content/uploads/runners-1.jpg);
+	min-width: 100%;
+}
+.sign_up_back {
+	background-image: url(http://becomingultra.com/wp-content/uploads/2016/03/Runner-feet-running-2.jpg);
+	background-position-x:-10em; 
+	min-width: 110%;
+}
+.sign_up_player {
+	background-image: url(http://images2.fanpop.com/images/photos/3800000/Football-not-Soccer-soccer-3870961-1200-563.jpg);
+}
+.login_img {
+	background-image: url(../img/login-pic.jpg);
+}
+.login_text {
+	color: #f1f1f1 !important;
+}
+.coach_signup_text {
+	color: black !important;
+}
+.black_border_bottom {
+	border-bottom: 1px solid black !important;
+}
+.gray_border_bottom {
+	border-bottom: 1px solid #ddd !important;
+}
+.white_border_bottom {
+	border-bottom: 1px solid #f1f1f1 !important;
+}
+.black_border {
+	border: 1px solid black !important;
+}
+.white_border {
+	border: 1px solid #f1f1f1 !important;
+}
+/*regimen borders*/
+h3.add_regimen {
+	margin-bottom: 40px;
+}
+/*left*/
+.edit_left_border {
+	border-left: 1px solid #ddd;
+}
+/*right*/
+.edit_right_border {
+	border-right: 1px solid #ddd;
+}
+/*bottom*/
+.edit_bottom_border {
+	border-bottom: 1px solid #ddd;
+}
+.coach_back {
+	font-size: 7em;
+}
+.text_small {
+	font-size: 5em;
+}
+.background_teams {
+	background-image: url(http://wallpapercave.com/wp/Cd7iyFl.jpg);
+}
+.background_team {
+	background-image: url(http://www.armstrongarrows.com/wp-content/uploads/2013/07/983-wallpaper-player-hockey-silhouette.jpg);
+}
+.background_journal {
+	background-image: url(https://c2.staticflickr.com/4/3833/12329901725_b6cdafec47_b.jpg);
+}
+.background_schedule {
+	background-image: url(http://www.gladiatorsgear.com/wp-content/uploads/2014/07/crossfitequipment.jpg);
+}
+.background_schedule_add {
+	background-image: url(http://crossfitashburton.co.nz/wp-content/uploads/2012/11/Open-Gym.jpg);
+}
+.background_media {
+	background-image: url(http://growthatmuscle.com/wp-content/uploads/2015/06/gym-background-1.jpg);
+}
+.background_profile {
+	background-image: url(http://wallpaper.zone/thumb/3087995.jpg);
+}

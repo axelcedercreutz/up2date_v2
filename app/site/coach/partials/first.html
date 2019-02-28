@@ -1,0 +1,53 @@
+<section id="coach" class="clearfix">
+<nav class="fixed">
+	<div>
+		<ul class="left-nav">
+			<li class="logo">up2date</li>
+		</ul>
+		<div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <i class="fa fa-bars nav_icon" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+			<ul class="right-nav list-inline">
+				<li ng-click="ctrl.goCreateTeam()"><span class="nav-item">Create a Team</span></li>
+				<li class="dropdown">
+					<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Your Profile
+					<span class="caret"></span></span>
+					<ul class="dropdown-menu dropdown-content">
+	          			<li ng-click="ctrl.backToTeams()"> <span class="nav-item">Your Teams</span></li>
+	          			<li ng-click="ctrl.logout()"><span class="nav-item">Log-Out</span></li>
+	        		</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+</section>
+<div class="jumbotron_small" ng-show="ctrl.is_teams">
+	<h3 class="jumbotron jumbotron_small center text_size_header background_teams background_bottom background_size_cover">Your Teams</h3>
+</div>
+<div class="container container_narrow padding_top body">
+	<div class="add_player" ng-hide="ctrl.is_teams">
+		<p>
+		You have no teams
+		</p>
+	</div>
+	<div ng-show="ctrl.is_teams">
+		<table class="products-list table"
+		ng-repeat="team in ctrl.teams | orderBy: 'createdAt':true track by $index">
+			<tr ng-click="ctrl.goToTeam(team.id)" class="hover_effect">
+				<th class="regimen_title_cell">{{team.name}}</th>
+				<th><md-button class="btn btn-sm frontpage_btn margin0 border_weak right" ng-click="ctrl.deleteTeam(team.id)">Delete Team</md-button></th>
+			</tr>
+		</table>
+		<div class="row">
+			<div class="col-xs-12 offset-col-md-4 col-md-4">
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<md-button class="form-input btn login-md-md-button stacked-input-box " ng-click="ctrl.goCreateTeam()">Create New team</md-button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,91 @@
+<section id="coach" class="clearfix">
+	<div id="mySidenav" class="sidenav center">
+		<a href="javascript:void(0)" class="closebtn" ng-click="ctrl.closeNav()">&times;</a>
+		<li ng-click="ctrl.goCreateTeam()"><span class="nav-item">Create a Team</span></li>
+		<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Schedules
+			<span class="caret"></span></span>
+			<ul class="dropdown-menu dropdown-content">
+	  			<li ng-click="ctrl.addRegimen();ctrl.closeNav()"><span class="nav-item">Add Schedule</span></li>
+	  			<li ng-click="ctrl.toRegimens();ctrl.closeNav()"> <span class="nav-item">All Schedules</span></li>
+			</ul>
+		</li>
+		<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Media
+			<span class="caret"></span></span>
+			<ul class="dropdown-menu dropdown-content">
+	  			<li ng-click="ctrl.addMedia();ctrl.closeNav()"><span class="nav-item">Add Media</span></li>
+	  			<li ng-click="ctrl.allMedia();ctrl.closeNav()"><span class="nav-item">All Media</span></li>
+			</ul>
+		</li>
+		<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Team
+			<span class="caret"></span>
+			</span>
+			<ul class="dropdown-menu dropdown-content">
+	  			<li ng-click="ctrl.journal();ctrl.closeNav()"> <span class="nav-item">Player Journals</span></li>
+	  			<li ng-click="ctrl.team();ctrl.closeNav()"><span class="nav-item">Manage Team</span></li>
+			</ul>
+		</li>
+		<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Your Profile
+			<span class="caret"></span></span>
+			<ul class="dropdown-menu dropdown-content">
+	  			<li ng-click="ctrl.backToTeams();ctrl.closeNav()"> <span class="nav-item">Your Teams</span></li>
+	  			<li ng-click="ctrl.toProfile();ctrl.closeNav()" class="ordered">Manage Profile</li>
+	  			<li ng-click="ctrl.logout();ctrl.closeNav()"><span class="nav-item">Log-Out</span></li>
+			</ul>
+		</li>
+	</div>
+	<nav class="fixed">
+		<div>
+			<ul class="left-nav">
+				<li class="logo" ng-click="ctrl.front()">up2date</li>
+			</ul>
+			<div class="navbar-header">
+	            <button type="button" data-toggle="collapse" class="navbar-toggle">
+	                <i ng-click="ctrl.openNav()" class="fa fa-bars nav_icon" aria-hidden="true"></i>
+	            </button>
+	        </div>
+			<div id="navbarCollapse" class="collapse navbar-collapse">
+				<ul class="right-nav list-inline">
+					<li ng-click="ctrl.goCreateTeam()"><span class="nav-item">Create a Team</span></li>
+					<li class="dropdown">
+						<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Schedules
+						<span class="caret"></span></span>
+						<ul class="dropdown-menu dropdown-content">
+		          			<li ng-click="ctrl.addRegimen()"><span class="nav-item">Add Schedule</span></li>
+		          			<li ng-click="ctrl.toRegimens()"> <span class="nav-item">All Schedules</span></li>
+		        		</ul>
+					</li>
+					<li class="dropdown">
+						<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Media
+						<span class="caret"></span></span>
+						<ul class="dropdown-menu dropdown-content">
+		          			<li ng-click="ctrl.addMedia()"><span class="nav-item">Add Media</span></li>
+		          			<li ng-click="ctrl.allMedia()"> <span class="nav-item">All Media</span></li>
+		        		</ul>
+					</li>
+					<li class="dropdown">
+						<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Team
+						<span class="caret"></span></span>
+						<ul class="dropdown-menu dropdown-content">
+		          			<li ng-click="ctrl.journal()"> <span class="nav-item">Player Journals</span></li>
+		          			<li ng-click="ctrl.team()"><span class="nav-item">Manage Team</span></li>
+		        		</ul>
+					</li>
+					<li class="dropdown">
+						<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Your Profile
+						<span class="caret"></span></span>
+						<ul class="dropdown-menu dropdown-content">
+		          			<li ng-click="ctrl.backToTeams()"> <span class="nav-item">Your Teams</span></li>
+		          			<li ng-click="ctrl.toProfile()" class="ordered">Manage Profile</li>
+		          			<li ng-click="ctrl.logout()"><span class="nav-item">Log-Out</span></li>
+		        		</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="body" ui-view=""></div>
+</section>

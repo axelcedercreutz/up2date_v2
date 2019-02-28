@@ -1,0 +1,23 @@
+<section id="auth" class="container sign_up_player background_size_cover min_width_min_height">
+  <div class="login-page">
+    <div id="main-content" class="auth main-content">    
+        <div class="banner-wrapper registration-header">
+          <h3 class="login_text">Check if you're authorized to sign up!</h3>
+        </div>
+        <md-content class="transparent" layout-padding>
+        <div>
+          <form name="userForm">
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label class="login_text" >Email</label>
+                <input class="white_border_bottom login_text" name="email" type="email" ng-model="ctrl.email" required>
+              </md-input-container>
+            </div>
+            <md-button type="submit" class="form-input btn stacked-input-box login-button login_text white_border" ng-click="ctrl.checkAuth()">{{ctrl.check_auth_btn}}</md-button>
+            <md-button type="submit" class="form-input btn stacked-input-box login-button login_text white_border" ng-click="ctrl.goHome()"> {{ctrl.back_btn}} </md-button>
+          </form>
+        </div>
+      </md-content>
+    </div>
+  </div>
+</section>

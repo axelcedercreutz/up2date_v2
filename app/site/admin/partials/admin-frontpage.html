@@ -1,0 +1,37 @@
+<section id="home" class="clearfix">
+<nav class="fixed">
+	<div>
+		<ul class="left-nav">
+			<li class="logo" ng-click="ctrl.front()">up2date</li>
+		</ul>
+		<ul class="right-nav list-inline">
+			<li ng-click="ctrl.logOut()"><span class="nav-item">Log-out</span></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+	<h3 class="admin-product admin-dash-title">Users</h3>
+
+	<div ng-hide="ctrl.is_users">
+		<p>
+			You have no users
+		</p>
+	</div>
+
+	<div ng-show="ctrl.is_users">
+		<table class="products-list table">
+			<tr>
+				<th>User ID</th>
+				<th>User Role</th>
+				<th>Team ID</th>
+			</tr>
+			<tr ng-repeat="user in ctrl.users">
+				<td>{{user.id}}</td>
+				<td>{{user.user_role}}</td>
+				<td>{{user.team_id}}</td>
+				<td><a ng-click="ctrl.deleteUser(user)">Delete</a></td>
+			</tr>
+		</table>
+	</div>
+</div>
+</section>

@@ -1,0 +1,29 @@
+<section id="auth" class="container login_img background_size_cover min_width_min_height">
+  <div class="login-page">
+    <div id="main-content" class="auth main-content">    
+        <div class="banner-wrapper registration-header">
+          <h3 class="login_text">Login</h3>
+        </div>
+        <md-content class="transparent" layout-padding>
+        <div>
+          <form name="userForm">
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label class="login_text">Email</label>
+                <input class="login_text white_border_bottom" name="email" type="email" ng-model="ctrl.email" required>
+              </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label class="login_text">Password</label>
+                <input class="login_text white_border_bottom" name="password" type="password" ng-model="ctrl.password" required>
+              </md-input-container>
+            </div>
+            <md-button type="submit" ng-disabled="!(userForm.email.$valid && userForm.password.$valid)" class="white_border form-input btn stacked-input-box login-md-md-button login_text" ng-click="ctrl.login()">{{ctrl.login_btn}}</md-button>
+            <md-button type="submit" class="white_border form-input btn stacked-input-box login-md-md-button login_text" ng-click="ctrl.goHome()"> {{ctrl.back_btn}} </md-button>
+          </form>
+        </div>
+      </md-content>
+    </div>
+  </div>
+</section>

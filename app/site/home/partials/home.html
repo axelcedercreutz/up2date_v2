@@ -1,0 +1,24 @@
+<section id="home" class="clearfix">
+<nav class="fixed">
+	<div>
+		<ul class="left-nav">
+			<li class="logo" ng-click="ctrl.front()">up2date</li>
+		</ul>
+		<ul class="right-nav list-inline">
+			<li ng-click="ctrl.toGetStarted('texthome')" du-scrollspy="texthome">Get Started</li>
+			<li ng-click="ctrl.toAboutUs('why_us')" du-scrollspy="why_us">Why Us?</li>
+			<li ng-click="ctrl.toQuotes('quotes')" du-scrollspy="quotes">Testimonials</li>
+			<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Sign Up
+			<span class="caret"></span></span>
+				<ul class="dropdown-menu dropdown-content">
+          			<li ng-click="ctrl.coach()"> <span class="nav-item">Coach</span></li>
+          			<li ng-click="ctrl.player()"> <span class="nav-item">Player</span></li> 
+        		</ul>
+			</li>
+			<li ng-click="ctrl.login()"><span class="nav-item">Login</span></li>
+		</ul>
+	</div>
+</nav>
+	<div class="body" ui-view=""></div>
+</section>

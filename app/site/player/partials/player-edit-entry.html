@@ -1,0 +1,37 @@
+<div class="jumbotron_small">
+  <h3 class="jumbotron jumbotron_small center background_schedule_add color_f1 background_size_cover">Edit Entry</h3>
+</div>
+<div>
+  <div class="container padding_top">
+    <md-content layout-padding>
+      <div class="frontpage_why">
+        <form name="userForm">
+          <div layout-gt-xs="row">
+            <div ng-model="ctrl.entries.date" class="" disabled>Date: {{ctrl.entries.date | limitTo: 10}}
+            </div>
+          </div>
+          <div class="padding_top" layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Duration of Practice</label>
+              <input ng-model="ctrl.entries.time">
+            </md-input-container>
+          </div>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Type of Practice</label>
+            <input name="type" ng-model="ctrl.entries.type" required>
+          </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+            <label>How heavy was the practice? (scale 0-9)</label>
+            <input type="number" min="0" max="9" name="heavy" ng-model="ctrl.entries.heavy">
+          </md-input-container>    
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Give comment on the practice</label>
+            <input type="text" ng-model="ctrl.entries.comment">
+          </md-input-container>
+          <md-button class="btn btn-sm frontpage_btn border_weak" ng-disabled="!userForm.type.$valid" ng-click="ctrl.editEntry()">Submit Changes</md-button>
+          <md-button class="btn btn-sm frontpage_btn border_weak" ng-click="ctrl.cancelEdit()">Cancel</md-button>
+        </form>
+      </div>
+    </md-content>
+  </div>
+</div>

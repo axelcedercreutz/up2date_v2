@@ -1,0 +1,79 @@
+<div class="jumbotron_small">
+	<h3 class="jumbotron jumbotron_small center background_schedule_add color_f1 background_size_cover background_bottom">Add Schedule</h3>
+</div>
+<div>
+	<div class="container frontpage_why margins_auto">
+		<form name="userForm" class="padding_top">
+		<md-input-container class="md-block" flex-gt-sm>
+			<label>Schedule Title</label>
+			<input name="title" ng-model="ctrl.title" required>
+		</md-input-container>
+		<table ng-submit="addRegimen()" class="coach_first margins_auto">
+			<tr>
+				<th></th>
+				<th class="on_right_cell">Date</th>
+				<th>Time</th>
+				<th>Practice</th>
+				<th>Place</th>
+			</tr>
+			<tr>
+				<td>{{ctrl.dayArray[0]}}</td>
+				<td class="empty_cell"><md-datepicker name="date" ng-model="ctrl.days[0].date" ng-change="ctrl.changeDate()" md-date-filter="ctrl.onlyMonday"></md-datepicker></td>
+				<td><input type="text" name="DayTime0" ng-model="ctrl.days[0].time"/></th>
+				<td><input type="text" name="DayPractice0" ng-model="ctrl.days[0].practice"/></td>
+				<td><input type="text" name="DayPlace0" ng-model="ctrl.days[0].place"/></td>
+			</tr>
+			<tr>
+				<td>{{ctrl.dayArray[1]}}</td>
+				<td class="empty_cell"><md-datepicker ng-model="ctrl.days[1].date" disabled></md-datepicker></td>
+				<td><input type="text" name="DayTime1" ng-model="ctrl.days[1].time"/></th>
+				<td><input type="text" name="DayPractice1" ng-model="ctrl.days[1].practice"/></td>
+				<td><input type="text" name="DayPlace1" ng-model="ctrl.days[1].place"/></td>
+			</tr>
+			<tr>
+				<td>{{ctrl.dayArray[2]}}</td>
+				<td class="empty_cell"><md-datepicker ng-model="ctrl.days[2].date" disabled></md-datepicker></td>
+				<td><input type="text" name="DayTime2" ng-model="ctrl.days[2].time"/></th>
+				<td><input type="text" name="DayPractice2" ng-model="ctrl.days[2].practice"/></td>
+				<td><input type="text" name="DayPlace2" ng-model="ctrl.days[2].place"/></td>
+			</tr>
+			<tr>
+				<td>{{ctrl.dayArray[3]}}</td>
+				<td class="empty_cell"><md-datepicker ng-model="ctrl.days[3].date" disabled></md-datepicker></td>
+				<td><input type="text" name="DayTime3" ng-model="ctrl.days[3].time"/></th>
+				<td><input type="text" name="DayPractice3" ng-model="ctrl.days[3].practice"/></td>
+				<td><input type="text" name="DayPlace3" ng-model="ctrl.days[3].place"/></td>
+			</tr>
+			<tr>
+				<td>{{ctrl.dayArray[4]}}</td>
+				<td class="empty_cell"><md-datepicker ng-model="ctrl.days[4].date" disabled></md-datepicker></td>
+				<td><input type="text" name="DayTime4" ng-model="ctrl.days[4].time"/></th>
+				<td><input type="text" name="DayPractice4" ng-model="ctrl.days[4].practice"/></td>
+				<td><input type="text" name="DayPlace4" ng-model="ctrl.days[4].place"/></td>
+			</tr>
+			<tr>
+				<td>{{ctrl.dayArray[5]}}</td>
+				<td class="empty_cell"><md-datepicker ng-model="ctrl.days[5].date" disabled></md-datepicker></td>
+				<td><input type="text" name="DayTime5" ng-model="ctrl.days[5].time"/></th>
+				<td><input type="text" name="DayPractice5" ng-model="ctrl.days[5].practice"/></td>
+				<td><input type="text" name="DayPlace5" ng-model="ctrl.days[5].place"/></td>
+			</tr>
+			<tr>
+				<td>{{ctrl.dayArray[6]}}</td>
+				<td class="empty_cell"><md-datepicker ng-model="ctrl.days[6].date" disabled></md-datepicker></td>
+				<td><input type="text" name="DayTime6" ng-model="ctrl.days[6].time"/></th>
+				<td><input type="text" name="DayPractice6" ng-model="ctrl.days[6].practice"/></td>
+				<td><input type="text" name="DayPlace6" ng-model="ctrl.days[6].place"/></td>
+			</tr>
+
+		</table>
+			<div class="row">
+				<div class="col-xs-12 offset-col-md-4 col-md-4">
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<md-button ng-disabled="!(userForm.date.$valid && userForm.title.$valid)" ng-click="ctrl.addRegimen()" class="add_player border_weak form-input btn login-md-md-button stacked-input-box">Add schedule</md-button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="jumbotron_small" ng-show="ctrl.is_entries">
+  <h3 class="jumbotron jumbotron_small center background_journal background_size_cover background_bottom">Journal</h3>
+</div>
+<div>
+  <div class="container">
+    <div class="coach_first frontpage_why">
+      <h4>Amount of Entries: {{ctrl.entries.length}}</h4>
+
+      <div ng-hide="ctrl.is_entries">
+        <p>
+          You have no Entries
+        </p>
+      </div>
+      <div ng-show="ctrl.is_entries">
+        <table class="products-list table table-front">
+          <tr>
+            <th>Date</th>
+            <th>Duration</th>
+            <th>Type of Practice</th>
+            <th>How heavy was the practice?</th>
+            <th>Comment</th>
+            <th></th>
+          </tr>
+          <tr ng-click="ctrl.goEditEntry(entry)" class="hover_effect" ng-repeat="entry in ctrl.entries | orderBy: 'date':true track by $index">
+            <td>{{entry.date | limitTo: 10}}</td>
+            <td>{{entry.time}}</td>
+            <td>{{entry.type}}</td>
+            <td>{{entry.heavy}}</td>
+            <td>{{entry.comment}}</td>
+            <td><md-button class="btn btn-sm frontpage_btn margin0 border_weak right" ng-click="ctrl.deleteEntry(entry)">Delete</md-button></td>
+          </tr>
+        </table>
+        <div ng-hide="ctrl.entries.length === 0">
+          <md-button class="btn btn-default border_weak" 
+            ng-click="ctrl.currentPage = ctrl.currentPage - 1" 
+            ng-disabled="ctrl.currentPage === 0"> Previous
+          </md-button>
+          Page {{ctrl.currentPage + 1}} of {{ctrl.roundUp(ctrl.entries.length / ctrl.entriesPerPage)}}
+
+          <md-button class="btn btn-default border_weak" 
+              ng-click="ctrl.currentPage = ctrl.currentPage + 1"
+              ng-disabled="ctrl.currentPage >= ctrl.entries.length/ctrl.entriesPerPage - 1"> Next
+          </md-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

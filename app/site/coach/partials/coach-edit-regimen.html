@@ -1,0 +1,98 @@
+<div class="jumbotron_small">
+	<h3 class="jumbotron jumbotron_small center background_schedule_add background_top color_f1 background_size_cover">Edit Schedule</h3>
+</div>
+<div>
+	<div class="container coach_first frontpage_why">
+		<form name="userForm">
+			<md-input-container class="md-block" flex-gt-sm>
+				<label>Schedule Title</label>
+				<input name="title" ng-model="ctrl.title" required>
+			</md-input-container>
+			<table class="products-list table edit_empty_cell">
+				<tr>
+					<th class="edit_left_border">Day</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Practice</th>
+					<th class="edit_right_border">Place</th>
+				</tr>
+				<tr>
+					<td class="edit_left_border">{{ctrl.dayArray[0]}}</td>
+					<td>
+						<div layout-gt-xs="row">
+			        		<div ng-model="ctrl.entries.date" disabled>{{ctrl.days[0].date | limitTo: 10}}
+			        		</div>
+			      		</div>
+			      	</td>
+					<td><input type="text" name="DayTime0" ng-model="ctrl.days[0].time"/></th>
+					<td><input type="text" name="DayPractice0" ng-model="ctrl.days[0].practice"/></td>
+					<td class="edit_right_border"><input type="text" name="DayPlace0" ng-model="ctrl.days[0].place"/></td>
+				</tr>
+				<tr>
+					<td class="edit_left_border">{{ctrl.dayArray[1]}}</td>
+					<td>
+						<div ng-model="ctrl.entries.date" disabled>{{ctrl.days[1].date | limitTo: 10}}
+			        	</div>
+					</td>
+					<td><input type="text" name="DayTime1" ng-model="ctrl.days[1].time"/></th>
+					<td><input type="text" name="DayPractice1" ng-model="ctrl.days[1].practice"/></td>
+					<td class="edit_right_border"><input type="text" name="DayPlace1" ng-model="ctrl.days[1].place"/></td>
+				</tr>
+				<tr>
+					<td class="edit_left_border">{{ctrl.dayArray[2]}}</td>
+					<td>
+						<div ng-model="ctrl.entries.date" disabled>{{ctrl.days[2].date | limitTo: 10}}
+			        	</div>
+					</td>
+					<td><input type="text" name="DayTime2" ng-model="ctrl.days[2].time"/></th>
+					<td><input type="text" name="DayPractice2" ng-model="ctrl.days[2].practice"/></td>
+					<td class="edit_right_border"><input type="text" name="DayPlace2" ng-model="ctrl.days[2].place"/></td>
+				</tr>
+				<tr>
+					<td class="edit_left_border">{{ctrl.dayArray[3]}}</td>
+					<td>
+						<div ng-model="ctrl.entries.date" disabled>{{ctrl.days[3].date | limitTo: 10}}
+			        	</div>
+					</td>
+					<td><input type="text" name="DayTime3" ng-model="ctrl.days[3].time"/></th>
+					<td><input type="text" name="DayPractice3" ng-model="ctrl.days[3].practice"/></td>
+					<td class="edit_right_border"><input type="text" name="DayPlace3" ng-model="ctrl.days[3].place"/></td>
+				</tr>
+				<tr>
+					<td class="edit_left_border">{{ctrl.dayArray[4]}}</td>
+					<td>
+						<div ng-model="ctrl.entries.date" disabled>{{ctrl.days[4].date | limitTo: 10}}
+			        	</div>
+					</td>
+					<td><input type="text" name="DayTime4" ng-model="ctrl.days[4].time"/></th>
+					<td><input type="text" name="DayPractice4" ng-model="ctrl.days[4].practice"/></td>
+					<td class="edit_right_border"><input type="text" name="DayPlace4" ng-model="ctrl.days[4].place"/></td>
+				</tr>
+				<tr>
+					<td class="edit_left_border">{{ctrl.dayArray[5]}}</td>
+					<td>
+						<div ng-model="ctrl.entries.date" disabled>{{ctrl.days[5].date | limitTo: 10}}
+			        	</div>
+					</td>
+					<td><input type="text" name="DayTime5" ng-model="ctrl.days[5].time"/></th>
+					<td><input type="text" name="DayPractice5" ng-model="ctrl.days[5].practice"/></td>
+					<td class="edit_right_border"><input type="text" name="DayPlace5" ng-model="ctrl.days[5].place"/></td>
+				</tr>
+				<tr>
+					<td class="edit_left_border edit_bottom_border">{{ctrl.dayArray[6]}}</td>
+					<td class="edit_bottom_border">
+						<div ng-model="ctrl.entries.date" disabled>{{ctrl.days[6].date | limitTo: 10}}
+			        	</div>
+					</td>
+					<td class="edit_bottom_border"><input type="text" name="DayTime6" ng-model="ctrl.days[6].time"/></td>
+					<td class="edit_bottom_border"><input type="text" name="DayPractice6" ng-model="ctrl.days[6].practice"/></td>
+					<td class="edit_right_border edit_bottom_border"><input type="text" name="DayPlace6" ng-model="ctrl.days[6].place"/></td>
+				</tr>
+
+			</table>
+
+			<md-button class="btn btn-sm frontpage_btn border_weak"  ng-disabled="!(userForm.title.$valid)" ng-click="ctrl.editRegimen()">Submit Changes</md-button>
+			<md-button class="btn btn-sm frontpage_btn border_weak" ng-click="ctrl.cancelEditRegimen()">Cancel Edit</md-button>
+		</form>
+	</div>
+</div>

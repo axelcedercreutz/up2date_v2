@@ -1,0 +1,56 @@
+<div class="jumbotron_small">
+  <h3 class="jumbotron jumbotron_small center background_journal background_bottom background_size_cover">Journal</h3>
+</div>
+<div>
+  <div class="container">
+    <div class="coach_first">
+      <div ng-show="ctrl.is_entries" class="row left_margin">
+        <label for="search">Sort By:<select class="form-control selector_journal" 
+              ng-options="sort as sort.label for sort in ctrl.sortOptions"
+              ng-model='ctrl.sortSelect'
+              ng-change="ctrl.currentPage = 0"></select></label>
+      </div>
+    </div>
+    <div ng-hide="ctrl.is_entries">
+      <p>
+        Your team has no entries
+      </p>
+    </div>
+    <div ng-show="ctrl.is_entries" class="frontpage_why">
+      <table class="products-list table table-front">
+        <tr>
+          <th>Date</th>
+          <th>Duration</th>
+          <th>Type of Practice</th>
+          <th>How heavy was the practice?</th>
+          <th>Comment</th>
+          <th>Name</th>
+        </tr>
+        <tr class="hover_effect" ng-click="ctrl.toOnePlayer(entry.user_id)"
+        ng-repeat="entry in ctrl.entries
+        | orderBy: ctrl.sortSelect.sortField : ctrl.sortSelect.reverse
+        | limitTo: ctrl.entriesPerPage: ctrl.currentPage * ctrl.entriesPerPage track by $index"
+        >
+          <td>{{entry.date | limitTo: 10}}</td>
+          <td>{{entry.time}}</td>
+          <td>{{entry.type}}</td>
+          <td>{{entry.heavy}}</td>
+          <td>{{entry.comment}}</td>
+          <td>{{ctrl.getPlayerFirst(entry.user_id)}} {{ctrl.getPlayerLast(entry.user_id)}}</td>
+        </tr>
+      </table>
+      <div ng-hide="ctrl.entries.length === 0">
+        <md-button class="btn btn-default border_weak" 
+          ng-click="ctrl.currentPage = ctrl.currentPage - 1" 
+          ng-disabled="ctrl.currentPage === 0"> Previous
+        </md-button>
+        Page {{ctrl.currentPage + 1}} of {{ctrl.roundUp(ctrl.entries.length / ctrl.entriesPerPage)}}
+
+        <md-button class="btn btn-default border_weak" 
+            ng-click="ctrl.currentPage = ctrl.currentPage + 1"
+            ng-disabled="ctrl.currentPage >= ctrl.entries.length/ctrl.entriesPerPage - 1"> Next
+        </md-button>
+      </div>
+    </div>
+  </div>
+</div>

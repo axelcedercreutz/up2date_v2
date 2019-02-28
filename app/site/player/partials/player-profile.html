@@ -1,0 +1,37 @@
+<div class="jumbotron_small">
+  <h3 class="jumbotron jumbotron_small center background_profile background_size_cover color_f1">Edit Profile</h3>
+</div>
+<div class="container">
+  <div class="coach_first">
+  	<md-content layout-padding>
+    <div class="frontpage_why">
+      <form name="userForm">
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>First Name</label>
+            <input ng-model="ctrl.player.first_name">
+          </md-input-container>
+        </div>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Last Name</label>
+          <input name="type" ng-model="ctrl.player.last_name" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Jersey Number</label>
+          <input ng-model="ctrl.player.number">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Email</label>
+          <input ng-model="ctrl.player.email">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>New Password</label>
+          <input type="password" ng-model="ctrl.player.newpassword">
+        </md-input-container>
+        <md-button class="btn btn-sm frontpage_btn border_weak" ng-disabled="!userForm.type.$valid" ng-click="ctrl.editProfile()">Submit Changes</md-button>
+      </form>
+    </div>
+  </md-content>
+  </div>
+</div>
+<toast></toast>

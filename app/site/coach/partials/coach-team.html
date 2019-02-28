@@ -1,0 +1,78 @@
+<div class="jumbotron_small">
+	<h3 class="jumbotron jumbotron_small center text_small background_team background_bottom background_size_cover color_f1">The following players are in your system</h3>
+</div>
+<div>
+	<div class="container">
+		<div ng-hide="ctrl.is_players" class="coach_first frontpage_why">
+			<p>
+				You have no players, add players by adding their email below.
+			</p>
+			<form name="userForm" class="add_player" ng-submit="ctrl.addPlayer()">
+			<md-input-container class="md-block" flex-gt-sm>
+	            <label>Add player</label>
+	            <input name="email" type="email" ng-model="ctrl.email">
+		    </md-input-container>
+		   	</form>
+		   	<form name="userForm" class="add_player" ng-submit="ctrl.addCoach()">
+				<md-input-container class="md-block" flex-gt-sm>
+		            <label class="coach_signup_text">Add new co-coach</label>
+		            <input class="coach_signup_text gray_border_bottom" name="email" type="email" ng-model="ctrl.email_coach">
+			    </md-input-container>
+		   	</form>
+		</div>
+		<div ng-show="ctrl.is_players" class="coach_first frontpage_why">
+			<label>Players</label>
+			<table class="products-list table table-front ">
+				<tr>
+					<th>Email</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Jersey Number</th>
+					<th></th>
+				</tr>
+				<tr class="hover_effect" ng-click="ctrl.toOnePlayer(player.id)"
+				ng-repeat="player in ctrl.players
+				|orderBy:'number':false
+				|filter: ctrl.player.user_role : 1">
+					<td>{{player.email}}</td>
+					<td>{{player.first_name}}</td>
+					<td>{{player.last_name}}</td>
+					<td>{{player.number}}</td>
+					<td><md-button class="btn btn-sm frontpage_btn margin0 border_weak right right_margin" ng-click="ctrl.deletePlayer(player)">Delete</md-button></td>
+				</tr>
+			</table>
+			<form name="userForm" class="add_player" ng-submit="ctrl.addPlayer()">
+				<md-input-container class="md-block" flex-gt-sm>
+		            <label class="coach_signup_text">Add new player</label>
+		            <input class="coach_signup_text gray_border_bottom" name="email" type="email" ng-model="ctrl.email">
+			    </md-input-container>
+		   	</form>
+			<label>Coches</label>
+			<table class="products-list table table-front ">
+				<tr>
+					<th>Email</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Coach ID</th>
+					<th></th>
+				</tr>
+				<tr class="hover_effect"
+				ng-repeat="coach in ctrl.users
+				|orderBy:'id':false
+				|filter: ctrl.coach.user_role : 0">
+					<td>{{coach.email}}</td>
+					<td>{{coach.first_name}}</td>
+					<td>{{coach.last_name}}</td>
+					<td>{{coach.id}}</td>
+					<td><md-button class="btn btn-sm frontpage_btn margin0 border_weak right right_margin" ng-click="ctrl.deletePlayer(coach)">Delete</md-button></td>
+				</tr>
+			</table>
+		   	<form name="userForm" class="add_player" ng-submit="ctrl.addCoach()">
+				<md-input-container class="md-block" flex-gt-sm>
+		            <label class="coach_signup_text">Add new co-coach</label>
+		            <input class="coach_signup_text gray_border_bottom" name="email" type="email" ng-model="ctrl.email_coach">
+			    </md-input-container>
+		   	</form>
+		</div>
+	</div>
+</div>

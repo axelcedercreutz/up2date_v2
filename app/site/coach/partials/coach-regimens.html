@@ -1,0 +1,42 @@
+<div class="jumbotron_small">
+	<h3 class="jumbotron jumbotron_small center background_schedule color_f1 background_size_cover">Training Schedules</h3>
+</div>
+<div>
+	<div class="container">
+		<div ng-hide="ctrl.is_regimens" class="coach_first frontpage_why">
+			<p>
+				You have no schedules
+			</p>
+			<md-button ng-click="ctrl.addRegimen()" class="add_player border_weak">Add a schedule</md-button>
+		</div>
+		<div class="row">
+			<div ng-show="ctrl.is_regimens" class="frontpage_why">
+				<div ng-repeat="regimen in ctrl.regimens
+				| orderBy: 'createdAt':true track by $index" class="row">
+					<h3 class="center frontpage">{{regimen.title}}</h3>
+					<div class="right schedule_right_margin">
+						<md-button class="btn btn-sm frontpage_btn border_weak margin0" ng-click="ctrl.goToEdit(regimen)">Edit</md-button>
+						<md-button class="btn btn-sm frontpage_btn border_weak" ng-click="ctrl.deleteRegimen(regimen)">Delete</md-button>
+					</div>
+					<table class="products-list table table-front left_margin2 width_95"
+					| orderBy: 'createdAt':true track by $index">
+						<tr>
+							<th>Day</th>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Practice</th>
+							<th>Place</th>
+						</tr>
+						<tr ng-repeat="day in regimen.days track by $index">
+							<td>{{ctrl.dayArray[$index]}}</td>
+							<td>{{day.date | limitTo: 10}}</td>
+							<td>{{day.time}}</td>
+							<td>{{day.practice}}</td>
+							<td>{{day.place}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

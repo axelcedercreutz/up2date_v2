@@ -1,0 +1,23 @@
+<div class="jumbotron_small">
+  <h3 class="jumbotron jumbotron_small center background_media  background_top color_f1 background_size_cover">Add Media</h3>
+</div>
+<div>
+  <div class="container">
+  	<div>
+  		<form name="userForm">
+          	<div layout-gt-sm="row">
+            		<md-input-container class="md-block coach_first" flex-gt-sm>
+              <label>Title</label>
+              <input name="title" ng-model="ctrl.title" required>
+            </md-input-container>
+          </div>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Youtube link</label>
+            <input name="link" ng-model="ctrl.youtube_id" required>
+          </md-input-container>
+          <md-button class="btn btn-sm frontpage_btn border_weak" ng-disabled="!(userForm.link.$valid && userForm.title.$valid)" ng-click="ctrl.addVideo()">Add Video</md-button>
+        </form>
+  	</div>
+  </div>
+</div>
+<toast></toast>

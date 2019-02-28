@@ -1,0 +1,32 @@
+<div class="jumbotron_small">
+  <h3 class="jumbotron jumbotron_small center background_media color_f1 background_size_cover">Media</h3>
+</div>
+<div>
+    <div class="container container_narrow">
+      <div ng-hide="ctrl.is_media">
+        <p>
+          Your team has no media
+        </p>
+      </div>
+      <div ng-show="ctrl.is_media" class="frontpage_why coach_first">
+        <table class="products-list table table-front center">
+          <tr>
+            <th class="center">Title</th>
+            <th class="center">Create at</th>
+           <!--  <th></th> -->
+          </tr>
+          <tr class="hover_effect"
+          ng-click="ctrl.goToVideo(video)"
+          ng-repeat="video in ctrl.media
+           | orderBy: 'createdAt': true">
+            <td>{{video.title}}</td>
+            <td>{{video.createdAt | limitTo: 10}}</td>
+            <!-- <td><md-button ng-click="ctrl.goToVideo(video)" class="btn btn-sm frontpage_btn bottom_of_ border_weak right" type="submit">Go To Video</md-button></td> -->
+          </tr>
+        </table>
+        <youtube-video video-url="video.youtube_id"></youtube-video>
+         
+      </div>
+    </div>
+</div>
+<toast></toast>

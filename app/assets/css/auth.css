@@ -1,0 +1,61 @@
+.login-page .main-content {
+  padding-top: 65px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-page .registration-header {
+  color: black;
+  font-size: 34px;
+  width: 100%;
+  margin: 0px auto 35px auto;
+  text-align: center;
+}
+.bs-form__button.stacked-input-box {
+    margin-bottom: 20px;
+    border: 1px solid #ddd !important;
+}
+
+.bs-form__button.btn-lg {
+    height: 47px;
+}
+.form-input.btn-primary {
+    border: 0;
+    color: #fff;
+}
+
+.bs-form__button {
+    font-weight: 400;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+
+.form-input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    padding-left: 15px;
+    font-size: 13px;
+    font-family: 'Open Sans', "Helvetica", "Arial", sans-serif;
+    border: 1px solid #d6d6d6;
+    color: #808080;
+    border-radius: 2px;
+}
+.regimen_title_cell {
+  width: 145px !important;
+}
+.on_right_cell {
+  text-align: right;
+  padding-right: 10px;
+}
+.login-shade-text {
+    color: #a3a3a3;
+    font-size: 13px;
+}
+
+.login-shade-text >a{
+  color:inherit;
+}

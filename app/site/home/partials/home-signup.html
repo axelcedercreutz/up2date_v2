@@ -1,0 +1,47 @@
+<section id="coach_sign_up" class="container sign_up_back background_size_cover min_width_min_height">
+  <div class="login-page body">
+    <div id="main-content" class="auth main-content">    
+        <div class="banner-wrapper registration-header">
+          <h3 class="coach_signup_text">Sign-Up Coach</h3>
+        </div>
+        <md-content class="transparent" layout-padding>
+        <div>
+          <form name="userForm">
+            <div layout-gt-sm="row" ng-submit="ctrl.signUp()">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label class="coach_signup_text">First Name</label>
+                <input class="black_border_bottom" name="first_name" type="text" ng-model="ctrl.first_name" required>
+              </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label class="coach_signup_text">Last Name</label>
+                <input class="black_border_bottom" name="last_name" type="text" ng-model="ctrl.last_name" required>
+              </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label class="coach_signup_text">Email</label>
+                <input class="black_border_bottom" name="email" type="email" ng-model="ctrl.email" required>
+              </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label class="coach_signup_text">Password</label>
+                <input class="black_border_bottom" name="password" type="password" ng-model="ctrl.password" required>
+              </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label class="coach_signup_text">Re-type Password</label>
+                <input class="black_border_bottom" name="password" type="password" ng-model="ctrl.repassword" required>
+              </md-input-container>
+            </div>
+            <md-button type="submit" ng-disabled="!(userForm.email.$valid && userForm.password.$valid && userForm.first_name.$valid && userForm.last_name.$valid)" class="form-input btn stacked-input-box login-md-md-button black_border coach_signup_text" ng-click="ctrl.signUp()" >{{ctrl.register_btn}}</md-button>
+            <md-button type="submit" class="form-input btn stacked-input-box login-md-md-button black_border coach_signup_text" ng-click="ctrl.goHome()"> {{ctrl.back_btn}} </md-button>
+          </form>
+        </div>
+      </md-content>
+    </div>
+  </div>
+</section>

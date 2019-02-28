@@ -1,0 +1,99 @@
+<div class="center hover">
+	<h1 id="slideShowCoach" class="center jumbotron coach_back background_size_cover margins_auto">{{ctrl.name}}</h1>
+	<i ng-click="ctrl.goToText()" class="fa fa-angle-double-down jumbo text_size_header" aria-hidden="true"></i>
+</div>
+<div>
+	<div id="text" class="container">
+		<div class="row frontpage_why coach_first">
+			<div class="col-xs-12 col-md-4">
+				<div class="row center left_margin right_margin">
+					<i ng-click="ctrl.team()" class="fa fa-trophy fa_size" aria-hidden="true"></i>
+					<h3 ng-click="ctrl.team()" class="center frontpage">Team</h3>
+					<table class="products-list table table-front">
+						<tr class="frontpage">
+							<th>Name</th>
+							<th>Jersey Number</th>
+						</tr>
+						<tr class="hover_effect" ng-click="ctrl.toOnePlayer(player.id)"
+						ng-repeat="player in ctrl.players
+						|orderBy: 'number':false track by $index">
+							<td>{{player.first_name}} {{player.last_name}}</td>
+							<td>{{player.number}}</td>
+						</tr>
+				</table>
+				<md-button class="btn btn-sm frontpage_btn bottom_of_ border_weak" ng-click="ctrl.team()">View All</md-button>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="row center">
+					<i ng-click="ctrl.toRegimens()" class="fa fa-calendar fa_size" aria-hidden="true"></i>
+					<div class="row">
+						<h3 ng-click="ctrl.toRegimens()" class="center frontpage">Schedules</h3>
+						<md-button class="btn btn-sm frontpage_btn header_btn" ng-click="ctrl.addRegimen()">Add New</md-button>
+					</div>
+					<div class="frontpage title_height table-front title_front">
+						<div class="row">
+							<h3 class="center"> {{ctrl.arrayFirst[0].title}}</h3>
+							<md-button class="btn btn-sm frontpage_btn border_weak header_btn edit_btn" ng-click="ctrl.goToEdit(ctrl.arrayFirst[0])">Edit</md-button>
+						</div>
+					</div>
+					<table class="products-list table table-front">
+						<tr class="frontpage">
+							<th>Day</th>
+							<th>Date</th>
+							<th>Time</th>							
+							<th>Practice</th>
+							<th>Place</th>
+						</tr>
+						<tr ng-repeat="day in ctrl.arrayFirst[0].days track by $index">
+							<td>{{ctrl.dayArray[$index]}}</td>
+							<td>{{day.date | limitTo: 10}}</td>
+							<td>{{day.time}}</td>
+							<td>{{day.practice}}</td>
+							<td>{{day.place}}</td>
+						</tr>
+					</table>
+					<md-button class="btn btn-sm frontpage_btn bottom_of_ border_weak" ng-click="ctrl.toRegimens()">View All</md-button>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="row center right_margin left_margin">
+					<i ng-click="ctrl.journal()" class="fa fa-list fa_size left_margin" aria-hidden="true"></i>
+					<h3 ng-click="ctrl.journal()" class="center frontpage left_margin">Player Entries</h3>
+					<table class="products-list table table-front ">
+					    <tr class="frontpage">
+					    	<th>Name</th>
+					    	<th>Date</th>
+					    	<th>Duration</th>
+					   		<th>Type of Practice</th>
+					    	<th>How heavy?</th>
+					    </tr>
+					    <tr  class="hover_effect" ng-click="ctrl.toOnePlayer(entry.user_id)"
+					    ng-repeat="entry in ctrl.filtered = (ctrl.entries |
+					 	filter: {user_id: ctrl.sortSelect.sortField}
+					 	| orderBy: 'date' : ctrl.sortSelect.reverse)
+					    | limitTo: 8 track by $index"
+					    >
+					    	<td>{{ctrl.getPlayerFirst(entry.user_id)}} {{ctrl.getPlayerLast(entry.user_id)}}</td>
+					    	<td>{{entry.date | limitTo: 10}}</td>
+					    	<td>{{entry.time}}</td>
+					    	<td>{{entry.type}}</td>
+					    	<td>{{entry.heavy}}</td>
+					    </tr>
+					</table>
+					<div class="row">
+						<div class="col-xs-6">
+						<select class="form-control fixed_hight" 
+	        				ng-options="sort as sort.label for sort in ctrl.sortOptions"
+	          				ng-model='ctrl.sortSelect'
+	          				ng-change="ctrl.currentPage = 0"></select>
+	          			</div>
+	          			<div class="col-xs-6">
+						<md-button class="btn btn-sm frontpage_btn bottom_of_ border_weak" ng-click="ctrl.journal()">View All</md-button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

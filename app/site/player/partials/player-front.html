@@ -1,0 +1,70 @@
+<div class="center hover">
+	<h1 id="slideShowPlayer" class="center jumbotron coach_back color_f1 background_size_cover">Welcome {{ctrl.player.first_name}}!</h1>
+	<i ng-click="ctrl.goToText()" class="fa fa-angle-double-down jumbo text_size_header" aria-hidden="true"></i>
+</div>
+<div>
+	<div id="textplayer" class="container">
+		<div class="row frontpage_why coach_first">
+			<div class="col-xs-12 col-md-6">
+				<div class="row center left_margin">
+					<i ng-click="ctrl.toRegimens()" class="fa fa-calendar fa_size" aria-hidden="true"></i>
+					<div ng-click="ctrl.toRegimens()" class="row">
+						<h3 class="center frontpage">Schedules</h3>
+					</div>
+					<table class="products-list table table-front">
+						<tr class="frontpage title_height">
+							<th></th>
+							<th></th>
+							<th class="regimen_title_cell center">{{ctrl.arrayFirst[0].title}}</th>
+							<th></th>
+							<th></th>
+						</tr>
+						<tr class="frontpage">
+							<th>Day</th>
+							<th>Date</th>
+							<th>Time</th>							
+							<th>Practice</th>
+							<th>Place</th>
+						</tr>
+						<tr ng-repeat="day in ctrl.arrayFirst[0].days track by $index">
+							<td>{{ctrl.dayArray[$index]}}</td>
+							<td>{{day.date | limitTo: 10}}</td>
+							<td>{{day.time}}</td>
+							<td>{{day.practice}}</td>
+							<td>{{day.place}}</td>
+						</tr>
+					</table>
+					<md-button class="btn btn-sm frontpage_btn bottom_of_ border_weak" ng-click="ctrl.toRegimens()">View All</md-button>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="row center left_margin right_margin">
+					<i ng-click="ctrl.toJournal()" class="fa fa-list fa_size left_margin" aria-hidden="true"></i>
+					<div>
+						<h3 ng-click="ctrl.toJournal()" class="center frontpage left_margin">Journal</h3>
+						<md-button class="btn btn-sm frontpage_btn header_btn frontpage_btn_player" ng-click="ctrl.newEntry()">Add Post</md-button>
+					</div>
+					<table class="products-list table table-front ">
+					    <tr class="frontpage">
+					    	<th>Date</th>
+					    	<th>Duration</th>
+					   		<th>Type of Practice</th>
+					    	<th>How heavy was the practice?</th>
+					    </tr>
+					    <tr class="hover_effect" ng-click="ctrl.goEditEntry(entry)"
+					    ng-repeat="entry in ctrl.entries
+					    |orderBy:'date':true
+					    | limitTo: 8 track by $index"
+					    >
+					    	<td>{{entry.date | limitTo: 10}}</td>
+					    	<td>{{entry.time}}</td>
+					    	<td>{{entry.type}}</td>
+					    	<td>{{entry.heavy}}</td>
+					    </tr>
+					</table>
+					<md-button class="btn btn-sm frontpage_btn bottom_of_ border_weak" ng-click="ctrl.toJournal()">View All</md-button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

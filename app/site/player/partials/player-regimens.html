@@ -1,0 +1,37 @@
+<div ng-show="ctrl.is_regimens" class="jumbotron_small">
+  <h3 class="jumbotron jumbotron_small center background_schedule color_f1 background_size_cover">Schedules</h3>
+</div>
+<div>
+	<div class="container frontpage_why">
+		<div ng-hide="ctrl.is_regimens">
+			<p>
+				You have no schedules
+			</p>
+		</div>
+		<div ng-show="ctrl.is_regimens" class="center coach_first">
+			<table class="products-list table table-front" ng-repeat="regimen in ctrl.regimens | orderBy: 'createdAt':true track by $index">
+				<tr>
+					<th>{{regimen.title}}</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th><md-button class="btn btn-sm frontpage_btn border_weak right" id='{{regimen.id}}' ng-click="ctrl.toggleHide(regimen.id)">{{ctrl.hide_btn}}</md-button></th>
+				</tr>
+				<tr class="frontpage title_height {{regimen.id}}">
+					<th>Day</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Practice</th>
+					<th>Place</th>
+				</tr>
+				<tr class="{{regimen.id}}" ng-repeat="day in regimen.days track by $index">
+					<td>{{ctrl.dayArray[$index]}}</td>
+					<td>{{day.date | limitTo: 10}}</td>
+					<td>{{day.time}}</td>
+					<td>{{day.practice}}</td>
+					<td>{{day.place}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

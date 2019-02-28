@@ -1,0 +1,60 @@
+<section id="coach" class="clearfix">
+	<div id="mySidenav" class="sidenav center">
+		<a href="javascript:void(0)" class="closebtn" ng-click="ctrl.closeNav()">&times;</a>
+		<ul>
+			<li ng-click="ctrl.toRegimens();ctrl.closeNav()" class="ordered">All Schedules</li>
+			<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Practice Journal
+			<span class="caret"></span></span>
+				<ul class="dropdown-menu dropdown-content">
+	      			<li ng-click="ctrl.newEntry();ctrl.closeNav()" class="ordered">Add New Entry</li>
+	      			<li ng-click="ctrl.toJournal();ctrl.closeNav()" class="ordered">View Journal</li>
+	    		</ul>
+			</li>
+	      	<li ng-click="ctrl.allMedia();ctrl.closeNav()"> <span class="nav-item">Media</span></li>
+			<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Your Profile
+			<span class="caret"></span></span>
+				<ul class="dropdown-menu dropdown-content">
+	      			<li ng-click="ctrl.toProfile();ctrl.closeNav()" class="ordered">Manage Profile</li>
+	      			<li ng-click="ctrl.logout();ctrl.closeNav()"><span class="nav-item">Log-Out</span></li>
+	    		</ul>
+			</li>
+		</ul>
+	</div>
+	<nav class="fixed">
+		<div class="container">
+			<ul class="left-nav">
+				<li class="logo" ng-click="ctrl.front()">up2date</li>
+			</ul>
+			<div class="navbar-header">
+	            <button type="button" data-toggle="collapse" class="navbar-toggle">
+	                <i ng-click="ctrl.openNav()" class="fa fa-bars nav_icon" aria-hidden="true"></i>
+	            </button>
+	        </div>
+			<div id="navbarCollapse" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav right-nav list-inline">
+					<li ng-click="ctrl.toRegimens()" class="ordered">All Schedules</li>
+					<li class="dropdown">
+					<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Practice Journal
+					<span class="caret"></span></span>
+						<ul class="dropdown-menu dropdown-content">
+		          			<li ng-click="ctrl.newEntry()" class="ordered">Add New Entry</li>
+		          			<li ng-click="ctrl.toJournal()" class="ordered">View Journal</li>
+		        		</ul>
+					</li>
+		          	<li ng-click="ctrl.allMedia()"> <span class="nav-item">Media</span></li>
+					<li class="dropdown">
+					<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Your Profile
+					<span class="caret"></span></span>
+						<ul class="dropdown-menu dropdown-content">
+		          			<li ng-click="ctrl.toProfile()" class="ordered">Manage Profile</li>
+		          			<li ng-click="ctrl.logout()"><span class="nav-item">Log-Out</span></li>
+		        		</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div ui-view=""></div>
+</section>

@@ -1,0 +1,15 @@
+<div class="jumbotron_small">
+	<h3 class="jumbotron jumbotron_small center background_schedule_add color_f1 background_size_cover">Add Entry</h3>
+</div>
+<div class="container center">
+	<h4>Choose date</h4>
+
+	<md-datepicker name="date" md-placeholder="Enter date" ng-model="ctrl.myDate"></md-datepicker>
+	<div class="row">
+		<div class="col-xs-12 offset-col-md-4 col-md-4">
+		</div>
+		<div class="col-xs-12 col-md-4">
+			<md-button class="add_player border_weak form-input btn login-md-md-button stacked-input-box" ng-click="ctrl.continueEntry(myDate)">{{ctrl.entry_btn}}</md-button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,188 @@
+<div class="center hover">
+	<h1 id="slideShow" class="center logo jumbotron runner_back background_bottom background_size_cover color_f1 margins_auto">up2date</h1>
+	<i id="slideShow_icon" ng-click="ctrl.toTextHome()" class="fa fa-angle-double-down jumbo" aria-hidden="true"></i>
+</div>
+<div class="background_front">
+	<div class="container">
+		<section id="texthome" class="frontpage_why black_border_bottom">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="row first_front">
+						<h2 class="center">Get started with <span class="logo underline">up2date</span> - step by step</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-4">
+					<div class="row center huge_numbers">
+						<h2 class="fa_size">1</h2>
+						<h3 class="center frontpage font_weight">Sign-up as coach</h3>
+					</div>
+					<div>
+						<p class="center">In order to make things work, the coach has to be on top of things. That's why he will be the one who's signing up first</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4 huge_numbers">
+					<div class="row">
+						<div class="row center">
+							<h2 class="fa_size">2</h2>
+							<h3 class="center frontpage font_weight">Create your team</h3>
+						</div>
+					</div>
+					<div>
+						<p class="center">As a coach you can create one or multiple teams. You can add schedules and media even before the players have to sign-up, so that everything's ready for the athletes</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="row center huge_numbers">
+						<h2 class="fa_size">3</h2>
+						<h3 class="center frontpage font_weight">Invite the players!</h3>
+					</div>
+					<div>
+						<p class="center">Invite the players easily by simply adding their email to the database. The players can then come in, sign-up and start using their online practice journals</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-4"></div>
+				<div class="col-xs-12 center col-md-4">
+					<md-button type="submit" class=" form-input btn stacked-input-box login-button black_border coach_signup_text add_player" ng-click="ctrl.coach()">Sign-Up Coach</md-button>
+				</div>
+				<div class="col-xs-12 col-md-4"></div>
+			</div>
+		</section>
+		<section id="why_us" class="frontpage_why title_front black_border_bottom">
+			<div class="row">
+				<div class="col-xs-12 center">
+					<div class="row padding_top">
+						<h2 class="center">Why use <span class="logo underline">up2date</span>?</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-4">
+					<div class="row center">
+						<i class="fa fa_size fa-pencil-square-o" aria-hidden="true"></i>
+						<h3 class="center frontpage font_weight">Make your life easier</h3>
+					</div>
+					<div>
+						<p class="center">No matter where you are, you can always update your teams schedules or see what your players have to say about their practice</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="row">
+						<div class="row center">
+							<i class="fa fa-comments fa_size" aria-hidden="true"></i>
+							<h3 class="center frontpage font_weight">Find out what your players think</h3>
+						</div>
+					</div>
+					<div>
+						<p class="center">There's no better way of getting feedback than have players write down how a practice felt. Get all your player's comments in one easy way!</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="row center">
+						<i class="fa fa-database  fa_size center" aria-hidden="true"></i>
+						<h3 class="center frontpage font_weight">Share your YouTube-videos easily</h3>
+					</div>
+					<div>
+						<p class="center">Forget about an endless amount Google Drive -links, upload all your team-videos on YouTube and have your team access them here with ease!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="quotes" class="frontpage_why title_front black_border_bottom">
+			<div  class="row">
+				<div class="col-xs-12">
+					<div class="row padding_top">
+						<h2 class="center ">What do people think about <span class="logo underline">up2date</span>?</h2>
+					</div>
+				</div>
+				<div class="row padding_top">
+					<div class="col-xs-12 col-md-4">
+						<div class="row center">
+							<div class="frontpage_img">
+							</div>
+							<h3 class="center font_weight">John Doe</h3>
+						</div>
+						<div>
+							<p class="center">Head-Coach for Team Unknown</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-7">
+						<div class="row">
+							<div class="row center">
+								<h3 class="center padding_top">"Having a tool where you can easily share the team schedules and media is so important! Using <span class="logo">up2date</span> changed the way we work."</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+<!-- 		<section id="newsletter" class="frontpage_why title_front" ng-submit="ctrl.signUpNews()">
+			<div  class="row">
+				<div class="col-xs-12">
+					<div class="row padding_top">
+						<h2 class="center ">Sign-up to the <span class="logo underline">up2date</span>-newsletter!</h2>
+					</div>
+				</div>
+				<div class="row padding_top">
+					<div class="col-xs-12 col-md-2"></div>
+					<div class="col-xs-12 col-md-8 padding_top">
+						<div layout-gt-sm="row">
+							<form name="newsletterForm" class="width_100">
+				              <md-input-container class="md-block" flex-gt-sm>
+				                <label class="coach_signup_text">Email</label>
+				                <input class="black_border_bottom" name="newsemail" type="email" ng-model="ctrl.newsemail" required>
+				              </md-input-container>
+				            </form>
+			            </div>
+					</div>
+					<div class="col-xs-12 col-md-2"></div>
+				</div>
+			</div>
+		</section>
+ -->	</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<div class="row center">
+							<h3 class="center">Contact us</h3>
+							<p>Email: axel.cedercreutz@gmail.com</p>
+							<p>Address: Sammonkatu 1 C 23 Helsinki</p>
+							<p>Phone Number: +358 50 597 0196</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<div class="row center">
+							<h3 class="center">More about us</h3>
+							<p>About Us</p>
+							<p>Policy</p>
+							<p>Getting started</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<div class="row center">
+							<h3 class="center">Follow us on social media</h3>
+						</div>
+						<div class="col-xs-12">
+							<div class="col-xs-3 center">
+								<i class="fa fa-github social_media" aria-hidden="true" ng-click="ctrl.github()"></i>
+							</div>
+							<div class="col-xs-3 center">
+								<i class="fa fa-linkedin social_media" aria-hidden="true" ng-click="ctrl.linkedin()"><a href="https://www.linkedin.com/in/axel-cedercreutz"></a></i>
+							</div>
+							<div class="col-xs-3 center">
+								<i class="fa fa-facebook social_media" aria-hidden="true" ng-click="ctrl.facebook()"></i>
+							</div>
+							<div class="col-xs-3 center">
+								<i class="fa fa-rss" aria-hidden="true" ng-click ="ctrl.website()"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>

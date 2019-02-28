@@ -1,0 +1,37 @@
+<div class="jumbotron_small">
+  <h3 class="jumbotron jumbotron_small center background_team background_bottom background_size_cover color_f1">Add Entry</h3>
+</div>
+<div>
+  <div class="container">
+    <md-content layout-padding>
+      <div>
+        <form name="userForm">
+          <div layout-gt-xs="row">
+            <md-datepicker name="date" ng-change="ctrl.findPossibleData()" ng-model="ctrl.myDate" required>
+            </md-datepicker>
+          </div>
+          <div class="padding_top" layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Duration of Practice</label>
+              <input ng-model="ctrl.practiceLength">
+            </md-input-container>
+          </div>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Type of Practice</label>
+            <input name="type" ng-model="ctrl.practiceType" required>
+          </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+            <label>How heavy was the practice? (scale 0-9)</label>
+            <input type="number" min="0" max="9" name="heavy" ng-model="ctrl.practiceHeavy" required>
+          </md-input-container>    
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Give comment on the practice</label>
+            <input type="text" ng-model="ctrl.practiceComment">
+          </md-input-container>
+          </div>
+          <md-button type="submit1" class="btn btn-sm frontpage_btn border_weak" ng-disabled="!(userForm.type.$valid && userForm.heavy.$valid && userForm.date.$valid)" ng-click="ctrl.createEntry()">Add Entry</md-button>
+        </form>
+      </div>
+    </md-content>
+  </div>
+</div>
