@@ -1,6 +1,9 @@
 {
   "name": "up2date",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.3.0"
+  },
   "description": "my final project",
   "main": "index.js",
   "scripts": {
@@ -16,6 +19,7 @@
     "express": "^4.16.4",
     "jsonwebtoken": "^7.4.3",
     "mysql": "^2.16.0",
+    "node": "^11.10.0",
     "node-ses": "^2.2.0",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
